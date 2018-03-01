@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+<div *ngFor="let contact of contacts" class="position">
+  <div class=" col s6">
+
+    <h4>ID</h4>
+    <h5>{{contact.id}}</h5>
+  </div>
+  <div class=" col s12">
+
+    <h4>Nombre de la Empresa</h4>
+    <h5>{{contact.company.name}}</h5>
+  </div>
+  <div class=" col s12">
+
+    <h4>NIT</h4>
+    <h5>{{contact.address.zipcode}}</h5>
+  </div>
+
+  <button (click)="showvoto()" class="btn btn-primary "> Votación</button>
+
+  <div class="position" *ngIf="voto">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>VOTACIÓN</h1>
+        <form >
+          <div class="btn-group btn-lg btn-block" (click)=" votacionregistro(event)">
+
+            <button type="button" class=" btn btn-secondary btn-lg btn-block">1</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">2</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">3</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">4</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">5</button>
+
+          
+
+          </div>
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
