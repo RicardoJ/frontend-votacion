@@ -23,17 +23,19 @@
       <div class="jumbotron">
         <h1>VOTACIÓN</h1>
         <form >
-          <div class="btn-group btn-lg btn-block" (click)=" votacionregistro(event)">
-
-            <button type="button" class=" btn btn-secondary btn-lg btn-block">1</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">2</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">3</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">4</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">5</button>
-
-          
-
+         
+          <div *ngFor="let voto of votos">
+              <!-- create a radio button-->
+              <input
+              class="radiocss"
+              type="radio"
+              name="votaciones"
+              value="{{voto}}"
+              (change)="radioChangeHandler($event)">  
+              <i>{{voto}}</i>
+           
           </div>
+          
         </form>
 
       </div>

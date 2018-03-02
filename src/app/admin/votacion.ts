@@ -3,6 +3,7 @@ import{Router , ActivatedRoute, Params} from '@angular/router';
 
 import {UserService} from '../services/user.service';
 
+
 @Component({
   selector: 'home',
   templateUrl: './votacion.html',
@@ -13,6 +14,16 @@ export class VotacionComponent {
  voto: boolean;
  contacts: Icontact[];
  title: string;
+
+ selectedVoto: string = '';
+ votos: any = [
+   '1',
+   '2',
+   '3',
+   '4',
+   '5'
+ ];
+
 
 
   constructor(
@@ -28,12 +39,18 @@ this.title = 'VOTACIÓN';
 });
   }
 
+  radioChangeHandler (event: any) {
+    //update the ui
+    let numerodeVoto = this.selectedVoto = event.target.value
+ 
+  alert("Acabas de votar por "+ numerodeVoto);
+  }
+
   showvoto(){
     this.voto = !this.voto; 
   }
-  votacionregistro(event){
-    console.log("You pressed button: " + event)
-  }
+
+  
 
 
 
